@@ -1,0 +1,22 @@
+.search-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px; /* adjust to move it higher/lower */
+  width: 100%;
+}
+
+.form-control.search-box {
+  width: 400px;
+  height: 50px;
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  outline: none;
+  background-color: #fff;
+}
+
+
