@@ -29,9 +29,17 @@ function App() {
   return (
     <>
       <NavigationBar />
-      <Search value={searchValue} setSearchValue={setSearchValue} />
+      <div className="title">
+        <h1>Stonk Alert</h1>
+        </div>
+        <Search value={searchValue} setSearchValue={setSearchValue} />
+      
+
+      
+
 
       {stockData && stockData.c !== 0 && (
+        //doesn't render this div is stockData or stockdata.c is null 
         <div className="stock-info">
           <h2>{searchValue.toUpperCase()}</h2>
           <p>Current Price: ${stockData.c}</p>
