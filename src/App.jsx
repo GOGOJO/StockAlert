@@ -4,17 +4,17 @@ import NavigationBar from "./components/NavigationBar";
 import Search from "./components/Search";
 
 function App() {
-  const [searchValue, setSearchValue] = useState("AAPL"); // Default symbol
+  const [searchValue, setSearchValue] = useState(""); // Default symbol
   const [stockData, setStockData] = useState(null);
 
   const apiKey = "d1d0ou1r01qic6lgeu50d1d0ou1r01qic6lgeu5g";
 
   useEffect(() => {
     if (!searchValue) return;
-
+    // gets data from finnhub api 
     const fetchData = async () => {
       try {
-        const url = `https://finnhub.io/api/v1/quote?symbol=${searchValue}&token=${apiKey}`;
+        const url = `https://finnhub.io/api/v1/quote?symbol=${searchValue.toUpperCase()}&token=${apiKey}`;
         const response = await fetch(url);
         const data = await response.json();
         setStockData(data);
@@ -33,9 +33,6 @@ function App() {
         <h1>Stonk Alert</h1>
         </div>
         <Search value={searchValue} setSearchValue={setSearchValue} />
-      
-
-      
 
 
       {stockData && stockData.c !== 0 && (
